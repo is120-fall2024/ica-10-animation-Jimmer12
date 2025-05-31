@@ -1,1 +1,135 @@
-/* EDIT THESE STYLES FOR YOUR TASKS */
+:root {
+  --text-1: #222;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+}
+
+header {
+  background: #333;
+  padding: 1em;
+}
+
+.logo img {
+  height: 50px;
+  transition: transform 0.5s ease, scale 0.5s ease;
+}
+
+.logo img:hover {
+  transform: rotate(10deg) scale(1.2);
+}
+
+.center-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  padding: 2em;
+}
+
+.box {
+  height: 150px;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1em;
+}
+
+/* #2 - Dynamic Quote Underline */
+.dynamic-quote {
+  position: relative;
+  font-weight: bold;
+}
+
+.dynamic-quote::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: linear-gradient(to right, #ff0080, #7928ca);
+  transition: width 0.5s ease;
+}
+
+.dynamic-quote:hover::after {
+  width: 100%;
+}
+
+/* #3 - Animated Box Position */
+.animated-box {
+  background-color: #88f;
+  animation: moveGrid 4s infinite alternate ease-in-out;
+}
+
+@keyframes moveGrid {
+  0% {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  100% {
+    grid-column: 3;
+    grid-row: 1;
+  }
+}
+
+/* #4 - Notification */
+.notification {
+  position: fixed;
+  bottom: -100px;
+  right: 20px;
+  background: #222;
+  color: #fff;
+  padding: 1em;
+  border-radius: 8px;
+  animation: slideIn 10s infinite;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(150%);
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  90% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(150%);
+    opacity: 0;
+  }
+}
+
+/* #5 - Gradient Hover */
+.gradient-hover {
+  background-image: linear-gradient(to right, red, orange);
+  transition: background-image 1s ease;
+}
+
+.gradient-hover:hover {
+  background-image: linear-gradient(to right, blue, green);
+}
+
+/* #6 - Rotating Text */
+.rotate-text svg {
+  width: 100px;
+  height: 100px;
+  animation: rotateText 10s linear infinite;
+}
+
+@keyframes rotateText {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
